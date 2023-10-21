@@ -1,4 +1,4 @@
-# NRA API 
+# NRA API
 
 NRA API is a Lumen Framework-based custom attendance application for NATARI clients.  
 
