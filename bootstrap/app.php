@@ -73,6 +73,7 @@ $app->configure('app');
 
 $app->middleware([
     \Fruitcake\Cors\HandleCors::class,
+    \App\Http\Middleware\LogRequest::class
 ]);
 
 $app->routeMiddleware([
