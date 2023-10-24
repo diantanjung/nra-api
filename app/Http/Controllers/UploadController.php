@@ -26,6 +26,6 @@ class UploadController extends Controller
         Storage::disk('public')->put($file_name, file_get_contents($request->file));
 
         // $cdn_url = config('filesystems.disks.do.cdn_endpoint') . "/" . $file_name;
-        return responseSuccess(compact('file_name'));
+        return responseSuccess($file_name);
     }
 }
