@@ -24,8 +24,9 @@ class UploadController extends Controller
 
         $file_name = randomString(20) . '_' . time() . '.' . $request->file->extension();
         Storage::disk('public')->put($file_name, file_get_contents($request->file));
-
-        // $cdn_url = config('filesystems.disks.do.cdn_endpoint') . "/" . $file_name;
-        return responseSuccess($file_name);
+        
+        return responseSuccess([
+            'cdn_url' => url("storage", $file_name)
+        ]);
     }
 }
